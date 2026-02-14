@@ -91,7 +91,7 @@ if("${ARM_PROCESSOR}" STREQUAL "arm")
 endif()
 
 #--- NVIDIA GPU Monitoring (NVML) ----------------------------------------------
-option(ENABLE_NVIDIA_GPU "Enable NVIDIA GPU monitoring support" ON)
+option(ENABLE_NVIDIA_GPU "Enable NVIDIA GPU monitoring support" OFF)
 
 if(ENABLE_NVIDIA_GPU)
   message(STATUS "Checking for NVIDIA Management Library (NVML)...")

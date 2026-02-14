@@ -17,7 +17,6 @@
 #include "parameter.h"
 #include "registry.h"
 
-
 class nvidiamon final : public Imonitor, public MessageBase {
  private:
   const prmon::parameter_list params = {{"ngpus", "1", "1"},
