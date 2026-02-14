@@ -182,12 +182,14 @@ bool nvidiamon::init_nvml() {
 
   if (result != NVML_SUCCESS) {
     warning("Failed to get GPU count: " + std::string(nvmlErrorString(result)));
+    nvmlShutdown();
     return false;
   }
 
   ngpus = gpus;
   if (gpus == 0) {
     warning("NvmlInit() succeeded but no GPUs found");
+    nvmlShutdown();
     return false;
   }
   return true;
