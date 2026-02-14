@@ -63,16 +63,14 @@ class nvidiamon final : public Imonitor, public MessageBase {
   prmon::monitored_value_map const get_text_stats();
   prmon::monitored_value_map const get_json_total_stats();
   prmon::monitored_average_map const get_json_average_stats(
-        unsigned long long elapsed_clock_ticks);
+      unsigned long long elapsed_clock_ticks);
   prmon::parameter_list const get_parameter_list();
 
   void const get_hardware_info(nlohmann::json& hw_json);
   void const get_unit_info(nlohmann::json& unit_json);
   bool const is_valid() { return valid; }
-
 };
 REGISTER_MONITOR(Imonitor, nvidiamon, "Monitor NVIDIA GPU activity")
 
 #endif // ENABLE_NVIDIA_GPU
-
 #endif // PRMON_NVIDIAMON_H
